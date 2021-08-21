@@ -4,6 +4,9 @@
   "type": "module",
   "description": "News API",
   "main": "index.js",
+  "scripts": {
+    "dev": "nodemon --experimental-json-modules src/index.mjs"
+  },
   "license": "MIT",
   "dependencies": {
     "cors": "^2.8.5",
