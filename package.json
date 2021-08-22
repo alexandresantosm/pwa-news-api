@@ -5,7 +5,9 @@
   "description": "News API",
   "main": "index.js",
   "scripts": {
-    "dev": "nodemon --experimental-json-modules src/index.mjs"
+    "start": "npm run build && node --experimental-json-modules build/index.mjs",
+    "dev": "nodemon --experimental-json-modules src/index.mjs",
+    "build": "mkdir -p build && cp -R node_modules src/* build"
   },
   "license": "MIT",
   "dependencies": {
