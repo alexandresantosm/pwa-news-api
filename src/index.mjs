@@ -23,6 +23,12 @@ app.get("/api", function (req, res) {
   });
 });
 
+app.get("/api/:subject", function (req, res) {
+  const { subject } = req.params;
+
+  res.json(GROUP_NEWS[subject]);
+});
+
 app.listen(PORT, function () {
   console.log(`Server is running on ${PORT} PORT`);
 });
