@@ -29,6 +29,14 @@ app.get("/api/:subject", function (req, res) {
   res.json(GROUP_NEWS[subject]);
 });
 
+app.get("/api/:subject/:id", function (req, res) {
+  const { subject, id } = req.params;
+  const allNewsBySubject = GROUP_NEWS[subject];
+  const newsById = allNewsBySubject.value.find((news) => news.id === id);
+
+  res.json(newsById);
+});
+
 app.listen(PORT, function () {
   console.log(`Server is running on ${PORT} PORT`);
 });
